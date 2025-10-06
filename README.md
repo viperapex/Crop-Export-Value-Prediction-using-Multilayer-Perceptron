@@ -2,7 +2,9 @@
 
 ## Project Overview
 
-This project implements a Multilayer Perceptron (MLP) neural network to predict crop export values using agricultural and economic indicators from FAOSTAT data. The model processes multiple datasets to forecast export values for different countries and future years.
+This project develops a comprehensive machine learning system for predicting agricultural export values using a Multilayer Perceptron (MLP) neural network. The model leverages extensive datasets from FAOSTAT (Food and Agriculture Organization of the United Nations) to forecast crop export values across different countries and time periods. By integrating multiple dimensions of agricultural and economic data, this system provides valuable insights for stakeholders in the agricultural sector.
+
+The primary objective is to create a robust predictive model that can assist governments, agricultural businesses, policymakers, and international organizations in making informed decisions about crop production, trade policies, and resource allocation. The model analyzes historical patterns and relationships between various economic, environmental, and agricultural factors to generate accurate export value predictions.
 
 ## Dataset Description
 
@@ -21,33 +23,13 @@ The project uses 13 different FAOSTAT datasets:
 - Land use
 - Pesticides use
 
-## Data Preprocessing
-
-### Key Steps:
-
-1. **Data Loading & Integration**
-   - Mount Google Drive for data access
-   - Load multiple CSV files with consistent naming patterns
-   - Handle mixed data types and warnings
-
-2. **Data Cleaning & Transformation**
-   - Ensure consistent data types for Area and Year columns
-   - Handle year formats (e.g., "2020-2021" to 2020)
-   - Add missing years to maintain temporal consistency
-
-3. **Feature Engineering**
-   - Aggregate values by Area and Year
-   - Create log-transformed features for skewed distributions
-   - Generate interaction terms (CPI x Emissions, Land Use x Temp Change)
-   - One-hot encoding for categorical 'Area' variable
-
 ## Model Architecture
 
 ### Network Structure:
-- Input Layer: 218 features
-- Hidden Layers: [128, 64, 32, 16, 8, 4, 2] neurons with ReLU activation
-- Output Layer: 1 neuron (regression output)
-- Regularization: Dropout (p=0.3) and L2 regularization
+ Input Layer: 218 features
+ Hidden Layers: [128, 64, 32, 16, 8, 4, 2] neurons with ReLU activation
+ Output Layer: 1 neuron (regression output)
+ Regularization: Dropout (p=0.3) and L2 regularization
 
 ### Training Configuration:
 - Optimizer: Adam (learning rate=0.001, weight decay=1e-5)
@@ -65,17 +47,12 @@ The project uses 13 different FAOSTAT datasets:
 
 ## Usage Instructions
 
-### 1. Setup Environment
-
 ```python
 # Mount Google Drive
 from google.colab import drive
 drive.mount('/content/drive')
 ```
-
-### 2. Data Preparation
-- Place all CSV files in the specified Google Drive folder
-- Ensure proper file naming conventions
+Place all CSV files in the specified Google Drive folder and also Ensure proper file naming conventions
 
 ### 3. Model Training
 
@@ -113,22 +90,3 @@ The model can predict export values for future years (2024-2026) for any country
 - Early stopping based on validation loss
 - Comprehensive model evaluation
 
-### Prediction Capabilities:
-- Future year forecasting
-- Country-specific predictions
-- Export results to CSV format
-
-## Technical Notes
-
-- The model uses synthetic data for future predictions when actual data is unavailable
-- All monetary values are log-transformed to handle skewness
-- The code is optimized for Google Colab environment
-- Random seeds are set for reproducible results
-
-## Results Interpretation
-
-- The decreasing loss curves indicate successful training
-- High R-squared score demonstrates strong predictive capability
-- Validation and test losses are closely aligned, suggesting good generalization
-
-This implementation provides a robust framework for agricultural export value prediction using neural networks and can be easily adapted for other regression tasks in the agricultural domain.

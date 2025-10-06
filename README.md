@@ -40,7 +40,7 @@ The project uses 13 different FAOSTAT datasets:
 - Validation: 20% of training data
 
 ## Model Performance
-<img src="content/data/output/Training-loss.jpg" width="500" height="350"/>
+<img src="content/data/output/Training-loss.png" width="500" height="350"/>
 - Final Test Loss: 3.4642
 - R-squared Score: 0.9259
 - The model shows excellent predictive performance with 92.59% variance explained

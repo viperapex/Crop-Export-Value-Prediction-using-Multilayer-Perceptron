@@ -68,25 +68,7 @@ The code automatically:
 # Change target region as needed
 target_region = 'Area_Albania'  # Modify this for different countries
 ```
+The model provides future year forecasting capabilities for 2024-2026 across all countries in the dataset, generating country-specific predictions that are exported to CSV format for easy access and analysis. The system produces several key output files including the preprocessed and merged dataset (combined_data_all_years.csv), trained model weights (best_model.pth), and region-specific prediction files (predictions_{region}.csv). Key features encompass robust data handling with missing value treatment, temporal consistency maintenance, and automated feature scaling, combined with advanced model capabilities such as automated hyperparameter tuning, learning rate scheduling, early stopping based on validation loss, and comprehensive model evaluation metrics.
 
-The model can predict export values for future years (2024-2026) for any country in the dataset.
 
-## Output Files
-
-- `combined_data_all_years.csv`: Preprocessed and merged dataset
-- `best_model.pth`: Trained PyTorch model weights
-- `predictions_{region}.csv`: Prediction results for specific regions
-
-## Key Features
-
-### Data Handling:
-- Robust missing value handling
-- Temporal consistency across datasets
-- Automated feature scaling
-
-### Model Features:
-- Automated hyperparameter tuning
-- Learning rate scheduling
-- Early stopping based on validation loss
-- Comprehensive model evaluation
-
+This project enables future year forecasting and country-specific predictions, with results exported to CSV format for practical use. From a technical perspective, the model utilizes synthetic data for future predictions when actual data is unavailable, applies log-transformations to monetary values to handle skewness, is optimized for Google Colab environment, and employs random seeds for reproducible results. The results interpretation shows decreasing loss curves indicating successful training, a high R-squared score demonstrating strong predictive capability, and closely aligned validation and test losses suggesting good generalization performance across different datasets.

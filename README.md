@@ -40,7 +40,7 @@ The project uses 13 different FAOSTAT datasets:
 - Validation: 20% of training data
 
 ## Model Performance
-![[Alt text](https://github.com/viperapex/Crop-Export-Value-Prediction-using-Multilayer-Perceptron/tree/9150513787499ccfef32cf06888543a26c14aff2/content/data/output)]
+<img src="content/data/Training Loss.jpg" width="500" height="350"/>
 - Final Test Loss: 3.4642
 - R-squared Score: 0.9259
 - The model shows excellent predictive performance with 92.59% variance explained
